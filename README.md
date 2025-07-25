@@ -1,123 +1,92 @@
-  # Ascey Platform Overview
+# Ascey Platform
 
-  ## Introduction
+## Overview
 
-  **Ascey** is an innovative blockchain platform designed for the issuance and management of Real World Assets (RWA) tokens, focusing on shares in the EGX30 index. Operating on the Internet Computer Protocol (ICP) using the Rust SDK, Ascey integrates the robustness of real-world finance with the flexibility of blockchain technology, reshaping asset trading and management.
+**Ascey** is a next-generation blockchain platform designed for issuing and managing Real World Asset (RWA) tokens, with a focus on tokenized shares from the EGX30 index. Built on the Internet Computer Protocol (ICP) using the Rust SDK, Ascey combines traditional finance with blockchain technology to deliver secure, transparent, and scalable asset trading and management.
 
-  ## Key Features
+---
 
-  ### Real-Time Settlement
+## Features
 
-  Transactions on the Ascey platform are settled instantaneously, allowing for seamless asset management and trading without traditional banking delays.
+### ⚡ Real-Time Settlement  
+Instant transaction finality eliminates delays associated with traditional financial systems.
 
-  ### Enhanced Accessibility
+### 🌍 Fractional Ownership  
+Tokenization allows small investors to participate in high-value asset markets via fractional ownership.
 
-  By tokenizing assets, Ascey enables fractional ownership, making it possible for small investors to participate in investment opportunities traditionally reserved for larger capital bases.
+### ✅ Regulatory Compliance  
+Fully compliant with regulations set by the Financial Regulatory Authority of Egypt, ensuring a secure and trustworthy investment environment.
 
-  ### Regulatory Compliance
+---
 
-  Ascey adheres to regulations set by the Financial Regulatory Authority of Egypt, ensuring a secure, transparent, and trustworthy environment for all users.
+## Business Value
 
-  ## Business Impact
+Ascey transforms asset trading by:
+- Accelerating transaction speed
+- Expanding market access through tokenization
+- Integrating decentralized fund management tools into traditional finance
 
-  Ascey revolutionizes asset trading by facilitating faster transactions, providing access to a wider range of investors through tokenization, and integrating cutting-edge fund management technologies into the financial sector.
+---
 
-## Technical Architecture
+## Architecture Overview
 
-Built on the Internet Computer Protocol with the Rust SDK, Ascey provides a secure, scalable, and decentralized platform capable of handling high transaction volumes with advanced security measures essential for financial operations.
+Built on the Internet Computer with Rust SDK, Ascey ensures performance, scalability, and decentralization while handling complex financial transactions securely.
 
-### Ascey Backend Canister
-- **Candid Path**: `src/ascey_backend/ascey_backend.did`
-- **Type**: Rust
-- **Description**:  Serves as the core business logic hub for the Ascey platform. It is responsible for managing the lifecycle of asset tokenization and ensures the secure and efficient processing of transactions within the platform. Key functionalities include handling buy,sell,token swaps, maintaining ledger balances, and interfacing with other canisters such as the ICRC1 Ledger and ICRC1 Index canisters for comprehensive asset management.
+### Backend Canisters
 
-### XRC Canister
-- **Candid Path**: `xrc/xrc.did`
-- **Description**:  Exchange Rate Canister calculates exchange rates using a unique aggregation method and it's  essential for executing transactions on the platform, ensuring that all trades are conducted at fair and accurate market rates.
+#### `ascey_backend`
+- **Path**: `src/ascey_backend/ascey_backend.did`  
+- **Type**: Rust  
+- **Role**: Core logic hub managing token lifecycle, buy/sell operations, swaps, and integration with ledger/index canisters.
 
-### ICRC1 Ledger Canister
-- **Candid Path**: Remote URL to Candid interface
-- **Description**: Implements  BELLA token standard, managing the lifecycle of tokens including issuance, transfer, and balance tracking. This canister is crucial for ensuring compliance with the ICRC1 standard across the Ascey platform.
+#### `xrc`
+- **Path**: `xrc/xrc.did`  
+- **Role**: Provides real-time exchange rates via aggregated data for accurate pricing.
 
-### ICRC1 Index Canister
-- **Candid Path**: Remote URL to Candid interface
-- **Description**: Provides indexing and query functionalities for BELLA token transactions, enhancing the accessibility and auditability of token operations within the Ascey ecosystem.
+#### `icrc1_ledger`
+- **Path**: Remote  
+- **Role**: BELLA token lifecycle management — issuance, transfers, and balances — using the ICRC1 standard.
 
-### Tommy ICRC1 Ledger and Index Canisters
-- **Description**: Similar to the ICRC1 ledger and index canisters but specific to the "Tommy" token, providing dedicated management and indexing for transactions involving this particular token.
+#### `icrc1_index`
+- **Path**: Remote  
+- **Role**: Enables transaction querying and indexing for BELLA tokens.
 
-### ICP Ledger Canister
-- **Candid Path**: Remote URL to Candid interface
-- **Description**: Manages transactions involving ICP tokens. It facilitates operations like token transfers, balance checks, and transaction logging on the network.
+#### `tommy_icrc1_ledger` & `tommy_icrc1_index`
+- **Role**: Equivalent functionality to BELLA, specific to the "Tommy" token.
 
-### ICP Index Canister
-- **Description**: Provides indexing and querying capabilities for transactions involving ICP tokens, which is essential for operational transparency and efficiency in handling ICP-related activities on the platform.
+#### `icp_ledger`
+- **Path**: Remote  
+- **Role**: Handles ICP token transactions including transfers and logging.
 
-### Internet Identity
-- **Candid Path**: Remote URL to Candid interface
-- **Description**: Provides decentralized identity verification services, allowing users to authenticate securely without relying on traditional centralized identity providers. This canister supports user privacy and security across the Ascey platform.
+#### `icp_index`
+- **Role**: Indexes ICP token transactions for transparency and reporting.
 
-### Ascey Frontend
-- **Source**: Location of the frontend distribution files
-- **Type**: Assets
-- **Description**: Delivers the user interface directly from the Internet Computer, ensuring that users interact with a responsive and secure frontend. It connects seamlessly to the backend and other canisters to provide a comprehensive user experience.
+#### `internet_identity`
+- **Path**: Remote  
+- **Role**: Provides decentralized authentication for secure user identity management.
 
+---
 
+### Frontend
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+- **Type**: Static assets  
+- **Role**: UI served via Internet Computer, fully integrated with backend canisters for a seamless user experience.
 
-To learn more before you start working with `ascey`, see the following documentation available online:
+---
 
-- [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
-- [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/setup/install)
-- [Rust Canister Development Guide](https://internetcomputer.org/docs/current/developer-docs/backend/rust/)
-- [ic-cdk](https://docs.rs/ic-cdk)
-- [ic-cdk-macros](https://docs.rs/ic-cdk-macros)
-- [Candid Introduction](https://internetcomputer.org/docs/current/developer-docs/backend/candid/)
+## Getting Started
 
-If you want to start working on your project right away, you might want to try the following commands:
+### Prerequisites
 
-```bash
-cd ascey/
-dfx help
-dfx canister --help
-```
+- [Install DFINITY SDK](https://internetcomputer.org/docs/current/developer-docs/setup/install)
+- Node.js & npm
+- Rust toolchain (`rustup`, `cargo`, etc.)
 
-## Running the project locally
+---
 
-If you want to test your project locally, you can use the following commands:
+## Project Setup
 
-```bash
-# Starts the replica, running in the background
-dfx start --background
-
-# Deploys your canisters to the replica and generates your candid interface
-dfx deploy
-```
-
-Once the job completes, your application will be available at `http://localhost:4943?canisterId={asset_canister_id}`.
-
-If you have made changes to your backend canister, you can generate a new candid interface with
+Run the provided script to initialize the project:
 
 ```bash
-npm run generate
-```
-
-at any time. This is recommended before starting the frontend development server, and will be run automatically any time you run `dfx deploy`.
-
-If you are making frontend changes, you can start a development server with
-
-```bash
-npm start
-```
-
-Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
-
-### Note on frontend environment variables
-
-If you are hosting frontend code somewhere without using DFX, you may need to make one of the following adjustments to ensure your project does not fetch the root key in production:
-
-- set`DFX_NETWORK` to `ic` if you are using Webpack
-- use your own preferred method to replace `process.env.DFX_NETWORK` in the autogenerated declarations
-  - Setting `canisters -> {asset_canister_id} -> declarations -> env_override to a string` in `dfx.json` will replace `process.env.DFX_NETWORK` with the string in the autogenerated declarations
-- Write your own `createActor` constructor
+./setup_project.sh
