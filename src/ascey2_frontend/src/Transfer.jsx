@@ -220,10 +220,12 @@ const Transfer = () => {
     };
 
     return (
-        <div className='md:py-10 bg-gray-900 py-8'>
+        <div className='md:py-10 bg-black py-8 relative overflow-hidden'>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-black"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
 
 
-            <div className=" bg-gray-900 p-6">
+            <div className=" bg-black p-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {tokens.map((token, index) => (
                         <div key={index} className="bg-slate-800 rounded-lg shadow-lg p-6">

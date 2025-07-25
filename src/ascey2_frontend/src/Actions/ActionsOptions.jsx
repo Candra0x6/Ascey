@@ -13,7 +13,10 @@ const ActionsOptions = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-900">
+        <div className="min-h-screen bg-black pt-20 relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-black"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+
             <main>
                 <div className="max-w-xl mx-auto sm:px-6 lg:px-8 pt-8 lg:pt-14 2xl:pt-18">
                     <div className="shadow-xl rounded-3xl h-auto border-t-[1px] border-slate-800 bg-slate-800">

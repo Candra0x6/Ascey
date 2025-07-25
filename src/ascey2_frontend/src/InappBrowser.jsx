@@ -6,7 +6,7 @@ export default function InappBrowser() {
   const [copied, setCopied] = useState(false);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white px-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white px-4">
       <div className="text-center p-6 bg-gray-800 rounded-lg shadow-lg max-w-sm w-full">
         <h2 className="text-lg font-semibold">Enhanced Security Notice</h2>
 

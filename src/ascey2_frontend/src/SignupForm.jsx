@@ -98,8 +98,10 @@ const SignupForm = () => {
   });
 
   if (!isAuthenticated) {
-    return (<div className="min-h-screen bg-gray-900 ">
-      {/* <p className="  min-h-screen bg-gray-900 text-white ">Please connect your wallet to sign up.</p> */}
+    return (<div className="min-h-screen bg-black pt-20 flex items-center justify-center relative overflow-hidden ">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-black"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+
       <div class=" flex items-center justify-center p-4  mb-4 text-sm  border rounded-lg bg-gray-800 text-blue-400 border-blue-800" role="alert">
         <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
           <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
@@ -114,7 +116,9 @@ const SignupForm = () => {
       ;
   }
   return (<>
-    <div className="relative overflow-hidden min-h-screen border-t-[1px] border-slate-800 bg-gray-900">
+    <div className="relative overflow-hidden min-h-screen border-t-[1px] border-slate-800 bg-black  flex flex-col items-center justify-center">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-black"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
 
       <div className="max-w-md mx-auto rounded-3xl bg-slate-800 p-6 shadow-md m-20">
         <h2 className="text-2xl font-bold text-white mb-4">Signup</h2>

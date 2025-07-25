@@ -103,11 +103,12 @@ function MyNavbar() {
   //const userInitial = username ? username.charAt(0).toUpperCase() : "U";
 
   return (
-    <nav className="bg-gray-900">
-      <div className="max-w-screen-xl mx-auto px-2 sm:px-6 lg:px-8">
-        <div className="relative flex items-center justify-between h-16">
-          {/* Mobile menu button*/}
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+    <nav className="w-full flex justify-center items-center">
+      <div className="bg-white/20 fixed top-0 left-0 right-0 z-50 backdrop-blur-md shadow-lg  w-full mx-auto rounded-xl mt-2 max-w-5xl p-1">
+        <div className="max-w-screen-xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div className="relative flex items-center justify-between h-16">
+            {/* Mobile menu button*/}
+            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <button
               type="button"
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-800 dark:text-gray-400 hover:bg-gray-300 dark:hover:text-white dark:hover:bg-gray-700"
@@ -130,7 +131,7 @@ function MyNavbar() {
                     key={item.name}
                     to={item.to}
                     className={({ isActive }) =>
-                      isActive ? "bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium" : "text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
+                      isActive ? "bg-purple-800  text-white px-3 py-2 rounded-md text-sm font-medium" : "text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium"
                     }
                   >
                     {item.name}
@@ -193,7 +194,7 @@ function MyNavbar() {
             ) : (
               <button
                 onClick={login}
-                className="bg-gradient-to-r-indigo-500-700 hover:bg-gradient-to-r-indigo-700-darker text-white font-bold text-lg  py-2 px-4 rounded"
+                className="bg-gradient-to-r-indigo-500-700 hover:bg-gradient-to-r-indigo-700-darker text-white font-bold text-lg  py-2 px-4 rounded-full"
               >
                 Connect to Wallet
               </button>
@@ -223,6 +224,7 @@ function MyNavbar() {
           </div>
         </div>
       )}
+        </div>
     </nav>
   );
 }

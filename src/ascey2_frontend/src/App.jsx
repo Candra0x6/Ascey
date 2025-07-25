@@ -8,6 +8,7 @@ import Transcations from './Transcations';
 import Transfer from './Transfer';
 import SignupForm from './SignupForm';
 import InappBrowser from './InappBrowser';
+import Footer from './Footer';
 function App() {
   return (
     <AuthProvider>
@@ -22,6 +23,7 @@ function App() {
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/InappBrowser" element={<InappBrowser/>} />
         </Routes>
+        <Footer />  
       </div>
     </AuthProvider>
   );

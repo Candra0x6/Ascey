@@ -111,7 +111,10 @@ function Transactions() {
   }, [principal]);
 
   return (
-    <div className="min-h-screen justify-center bg-gray-900 flex">
+    <div className="min-h-screen justify-center bg-black pt-20 flex relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-black"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+
       <div className="m-10 w-full max-w-screen-xl bg-slate-800 rounded-lg shadow-lg p-8">
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-300">
